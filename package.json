@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/weigen393/typescript-graphql-practice#readme",
   "dependencies": {
-    "@types/node": "^18.11.9"
+    "@types/node": "^18.11.9",
+    "apollo-server": "^3.11.1",
+    "graphql": "^16.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",

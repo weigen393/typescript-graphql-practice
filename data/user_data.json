@@ -1,0 +1,14 @@
+[
+  {
+  "account": "test1",
+  "password": "p1",
+  "name": "user1",
+  "birthday": "1994-11-16"
+  },
+  {
+    "account": "test2",
+    "password": "p2",
+    "name": "user2",
+    "birthday": "2022-11-16"
+  }
+]
