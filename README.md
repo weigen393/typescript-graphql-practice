@@ -76,6 +76,25 @@
         }
         ```
 
+    -   其他範例資料
+
+    ```
+    {
+          "account": "peter19941116",
+          "password": "123456"
+    },
+    {
+          "account": "peter20221116",
+          "password": "abcdef"
+    },
+    {
+          "account": "testaccount",
+          "password": "555555"
+    }
+    ```
+
+    -   可由範例資料的帳號密碼先打 login API，獲得 token 後以此 token 做為 Authorization 的 header 打 me API 來獲得使用者資料
+
 # 4. 整個過程的研究心得
 
 Typescript 心得:
@@ -83,6 +102,7 @@ Typescript 心得:
 -   Typescript 會先編譯過，不用等執行就會跳錯誤
 -   Typescript 是強型別，需要先定義好
 -   npm 都要裝 typescript 版本的
+-   物件要用 interface 先定義
 -   function 之間用物件傳值相較於 JS 較不方便，需要再研究
 
 GraphQL 心得:
