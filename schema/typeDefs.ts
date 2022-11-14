@@ -10,7 +10,7 @@ const typeDefs = gql`
   type UserInfo {
     account: String
     name: String
-    birthday: String
+    birthday: String  
   }
   type Login {
     accessToken: String

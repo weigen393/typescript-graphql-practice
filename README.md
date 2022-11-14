@@ -10,6 +10,7 @@
 
 -   主要檔案為 `app.ts`
 -   `data` 資料夾內為使用者資料
+-   `utils` 資料夾內為使用工具，如 jwt
 -   `schema` 資料夾內為定義的 Query 格式和實作
 
 # 3. api 的規格與範例
@@ -45,7 +46,7 @@
     -   me
 
         ```
-        query Me {
+        query Query {
           me {
             account
             name
@@ -57,7 +58,16 @@
           Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoicGV0ZXIxOTk0MTExNiIsIm5hbWUiOiJQZXRlciIsImJpcnRoZGF5IjoiMTk5NC0xMS0xNiIsImlhdCI6MTY2ODM4NjQ0NiwiZXhwIjoxNjY4NDcyODQ2fQ.2ghtz1g5-fPCIs4cDJ1MBMNHlZ2z_IFSLmZtNwlaXOI"
         }
 
-        example output: { account: 'peter19941116', name: 'Peter', birthday: '1994-11-16' }
+        example output:
+        {
+          "data": {
+            "me": {
+              "account": "peter19941116",
+              "birthday": "1994-11-16",
+              "name": "Peter"
+            }
+          }
+        }
         ```
 
 # 4. 整個過程的研究心得
@@ -77,4 +87,4 @@ GraphQL 心得:
 
 整體心得:
 
-趁這個機會學習 TypeScript 和 GraphQL 蠻有趣的，體會到強型別語言的麻煩之處還有 GraphQL 獨特的部分 API 模式，之後也會再研究和學習。
+趁這個機會學習 TypeScript 和 GraphQL 蠻有趣的，體會到強型別語言的麻煩之處還有 GraphQL 獨特的 API 模式，之後也會再研究和學習。
