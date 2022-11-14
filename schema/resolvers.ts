@@ -16,18 +16,35 @@ const resolvers = {
       console.log(args);      
       
       const user = users.find((user: { account: String; }) => user.account === args.account);
-      if (!user) throw new Error('Account Not Exists');
+      if (!user) throw new Error("Account Not Exists");
       console.log(user);
       
       const passwordIsValid = await bcrypt.compare(args.password, user.password);
-      if (!passwordIsValid) throw new Error('Wrong Password');
+      if (!passwordIsValid) throw new Error("Wrong Password");
       console.log(createToken(user.account, user.name, user.birthday));
       
       return { accessToken: createToken(user.account, user.name, user.birthday), expired: EXPIRED };
     },
-    me: () => {
-
-      return users;
+    me: (parent: any, args: any, context: any) => {   
+      const { token } = context;
+      console.log(token);
+      try{
+        if(!token){
+          throw new Error("Unauthorized");
+        }
+        jwt.verify(token, TOKEN_KEY!, (error: unknown, decoded: any) => {
+          if (error) {
+            console.log(error);          
+            throw new Error("Wrong token");
+          }
+          const {account, name, birthday} = decoded;          
+          
+          return { account: account, name: name, birthday: birthday };                    
+        });        
+      }catch(e){
+        console.log(e);        
+        return e;
+      }
     }    
   }
 }

@@ -6,10 +6,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: async ({ req }) => {
-    let token: string | undefined = req.headers.authorization;
-    if (!token) {
-      return { message: 'Unauthorized' };
-    }
+    let token: String | undefined = req.headers.authorization;
     return { token };    
   },
 });

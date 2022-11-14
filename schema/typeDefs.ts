@@ -7,13 +7,18 @@ const typeDefs = gql`
     name: String
     birthday: String
   }
+  type UserInfo {
+    account: String
+    name: String
+    birthday: String
+  }
   type Login {
     accessToken: String
     expired: String
   }
   type Query {
-    me: [User]
     login (account: String!, password: String!): Login
+    me: UserInfo    
   }
 `
 
