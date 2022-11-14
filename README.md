@@ -7,6 +7,10 @@
     git@github.com:weigen393/typescript-graphql-practice.git
     ```
 -   建立.env 檔，依據.env.example 的變數進行填入
+-   npm install
+    ```
+    npm install
+    ```
 -   啟動程式
     ```
     npm start
